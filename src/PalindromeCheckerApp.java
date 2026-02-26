@@ -1,27 +1,32 @@
 /*
-*UC2: Print a Hardcoded Palindrome Result
+*UC3: Palindrome Check Using String Reverse
 *
 * @author Mohith
-* @version 2.0
-*/
+* @version 3.0
+ */
 import java.util.Scanner;
 
 
 public class PalindromeCheckerApp {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        String input = "madam";
+        String word = "madam";
         boolean isPalindrome = true;
-        int length = input.length();
+        int n = word.length()-1;
+        int start = 0;
 
-        for(int i=0;i<length/2;i++) {
-            if (input.charAt(i) != input.charAt(length - 1 - i)) {
+        for(int i = n; i > 0; i--){
+            if(word.charAt(i) != word.charAt(start)){
                 isPalindrome = false;
                 break;
             }
+            start++;
         }
 
-        System.out.println("Input text: " + input);
-        System.out.println("Is it a Palindrome?: " + isPalindrome);
+        if(isPalindrome){
+            System.out.println(word+" is palindrome");
+        } else  {
+            System.out.println(word+" is not  a palindorme");
+        }
     }
 }
