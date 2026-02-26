@@ -1,32 +1,29 @@
 /*
-*UC3: Palindrome Check Using String Reverse
+*UC4: Character Array Based Palindrome Check
 *
 * @author Mohith
-* @version 3.0
+* @version 4.0
  */
-import java.util.Scanner;
-
 
 public class PalindromeCheckerApp {
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        String word = "madam";
-        boolean isPalindrome = true;
-        int n = word.length()-1;
+        String input = "radar";
+        char[] chars = input.toCharArray();
         int start = 0;
-
-        for(int i = n; i > 0; i--){
-            if(word.charAt(i) != word.charAt(start)){
+        int end = chars.length-1;
+        boolean isPalindrome = true;
+        while(start<end){
+            if(chars[start] != chars[end]){
                 isPalindrome = false;
-                break;
             }
             start++;
+            end--;
         }
 
         if(isPalindrome){
-            System.out.println(word+" is palindrome");
+            System.out.println(input+" is palindrome");
         } else  {
-            System.out.println(word+" is not  a palindorme");
+            System.out.println(input+" is not a palindorme");
         }
     }
 }
