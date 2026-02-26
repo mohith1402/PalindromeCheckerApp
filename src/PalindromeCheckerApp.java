@@ -8,11 +8,24 @@
 * @author Mohith
 * @version 1.0
  */
+import java.util.Scanner;
+
 
 public class PalindromeCheckerApp {
     public static void main(String[] args){
-        System.out.println("Welcome to the Palindrome Checker Managment System");
-        System.out.println("Version : 1.0");
-        System.out.println("System initialized Successfully");
+        Scanner sc = new Scanner(System.in);
+        String input = "madam";
+        boolean isPalindrome = true;
+        int length = input.length();
+
+        for(int i=0;i<length/2;i++) {
+            if (input.charAt(i) != input.charAt(length - 1 - i)) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        System.out.println("Input text: " + input);
+        System.out.println("Is it a Palindrome?: " + isPalindrome);
     }
 }
