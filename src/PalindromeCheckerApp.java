@@ -1,12 +1,8 @@
 /*
-* UC1 Palindrome Checker
-* -Printing welcome message
-* -showing application version
-*
-* No pelindrome logic is implemented yet.
+*UC2: Print a Hardcoded Palindrome Result
 *
 * @author Mohith
-* @version 1.0
+* @version 2.0
  */
 import java.util.Scanner;
 
