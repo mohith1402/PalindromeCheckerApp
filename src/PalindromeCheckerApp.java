@@ -26,7 +26,7 @@ public class PalindromeCheckerApp {
         if(isPalindrome){
             System.out.println(word+" is palindrome");
         } else  {
-            System.out.println(word+" is not a palindorme");
+            System.out.println(word+" is not  a palindorme");
         }
     }
 }
