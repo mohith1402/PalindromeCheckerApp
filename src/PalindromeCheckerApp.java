@@ -1,8 +1,8 @@
 /*
- *UC12: Strategy Pattern for Palindrome Algorithms (Advanced)
+ *UC13: Performance Comparison
  *
  * @author Mohith
- * @version 12.0
+ * @version 13.0
  */
 
 interface PalindromeStrategy {
@@ -26,41 +26,19 @@ class StackStrategy implements PalindromeStrategy {
     }
 }
 
-class TwoPointerStrategy implements PalindromeStrategy {
-    @Override
-    public boolean check(String input) {
-        String normalized = input.toLowerCase();
-        int start = 0;
-        int end = normalized.length() - 1;
-        while (start < end) {
-            if (normalized.charAt(start) != normalized.charAt(end)) {
-                return false;
-            }
-            start++;
-            end--;
-        }
-        return true;
-    }
-}
-
-class PalindromeContext {
-    private PalindromeStrategy strategy;
-
-    public void setStrategy(PalindromeStrategy strategy) {
-        this.strategy = strategy;
-    }
-
-    public boolean executeStrategy(String input) {
-        return strategy.check(input);
-    }
-}
 public class PalindromeCheckerApp {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         String input = "Level";
-        PalindromeContext context = new PalindromeContext();
+        PalindromeStrategy strategy = new StackStrategy();
 
-        context.setStrategy(new StackStrategy());
+        long startTime = System.nanoTime();
+        boolean isPalindrome = strategy.check(input);
+        long endTime = System.nanoTime();
+
+        long duration = endTime - startTime;
+
         System.out.println("Input: " + input);
-        System.out.println("Is Palindrome?: " + context.executeStrategy(input));
+        System.out.println("Is Palindrome?: " + isPalindrome);
+        System.out.println("Execution Time: " + duration + " ns");
     }
 }
