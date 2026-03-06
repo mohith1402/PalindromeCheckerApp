@@ -1,8 +1,8 @@
 /*
- *UC11: Object-Oriented Palindrome Service
+ *UC12: Strategy Pattern for Palindrome Algorithms (Advanced)
  *
  * @author Mohith
- * @version 11.0
+ * @version 12.0
  */
 
 interface PalindromeStrategy {
